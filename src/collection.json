@@ -1,9 +1,9 @@
 {
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
-    "angular-cli-builders-demo": {
-      "description": "A blank schematic.",
-      "factory": "./angular-cli-builders-demo/index#angularCliBuildersDemo"
+    "ng-add": {
+      "description": "Add the demo builders to the project",
+      "factory": "./ng-add/index#ngAdd"
     }
   }
 }

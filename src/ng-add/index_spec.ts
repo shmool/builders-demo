@@ -6,10 +6,10 @@ import * as path from 'path';
 const collectionPath = path.join(__dirname, '../collection.json');
 
 
-describe('angular-cli-builders-demo', () => {
+describe('ng-add', () => {
   it('works', () => {
     const runner = new SchematicTestRunner('schematics', collectionPath);
-    const tree = runner.runSchematic('angular-cli-builders-demo', {}, Tree.empty());
+    const tree = runner.runSchematic('ng-add', {}, Tree.empty());
 
     expect(tree.files).toEqual([]);
   });
