@@ -12,8 +12,8 @@ const builders: { [name: string]: TargetDefinition } = {
   shellCommand: {
     builder: `${ packageName }:shellCommand`
   },
-  modifyConfig: {
-    builder: `${ packageName }:modifyConfig`
+  addConfig: {
+    builder: `${ packageName }:addConfig`
   }
 };
 

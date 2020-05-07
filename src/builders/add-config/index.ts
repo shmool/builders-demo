@@ -34,34 +34,30 @@ export default createBuilder<Options>(async (options: Options, context: BuilderC
   }
 
   let configObj;
-  if (options.configName) {
-    if (!target.configurations) {
-      target.configurations = {};
-    }
-    configObj = target.configurations;
-  } else {
-    if (!target.options) {
-      target.options = {};
-    }
-    configObj = target.options;
+  if (!target.configurations) {
+    target.configurations = {};
   }
+  configObj = target.configurations;
 
-  configObj.command = options.command;
-  configObj.args = options.args;
+  configObj[options.configName] = {
+    command: options.command,
+    args: options.args
+  };
 
   // update .angular.json with the new project config (within workspace)
   await workspaces.writeWorkspace(workspace, host);
 
   if (options.exec) {
-    context.logger.info(`📦 Running "${options.target}" on "${context.target.project}"`);
+    context.logger.info(`📦 Running "${ options.target }" on "${ context.target.project }"`);
 
     const run = await context.scheduleTarget({
       target: options.target,
-      project: context.target.project
+      project: context.target.project,
+      configuration: options.configName
     });
     const targetResult = await run.result;
     if (!targetResult.success) {
-      throw new Error(`Target failed: ${targetResult.error}`);
+      throw new Error(`Target failed: ${ targetResult.error }`);
     }
   }
 
