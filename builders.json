@@ -1,0 +1,14 @@
+{
+  "builders": {
+    "shellCommand": {
+      "implementation": "./src/builders/shell-command",
+      "schema": "./src/builders/shell-command/schema.json",
+      "description": "Runs any command line in the operating system."
+    },
+    "modifyConfig": {
+      "implementation": "./src/builders/modify-config",
+      "schema": "./src/builders/modify-config/schema.json",
+      "description": "modify-config."
+    }
+  }
+}

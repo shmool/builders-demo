@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "type": "object",
+  "properties": {
+    "target": {
+      "type": "string",
+      "default": "shellCommand"
+    },
+    "configName": {
+      "type": "string",
+      "default": "pwdCommand"
+    },
+    "command": {
+      "type": "string",
+      "default": "pwd"
+    },
+    "args": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "exec": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

@@ -1,7 +1,8 @@
 {
-  "name": "angular-cli-builders-demo",
+  "name": "builders-demo",
   "version": "0.0.0",
-  "description": "A blank schematics",
+  "description": "A demo project demonstrating Angular CLI builders",
+  "builders": "builders.json",
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "build:watch": "npm run build -s -- -w",
@@ -15,13 +16,14 @@
   "license": "MIT",
   "schematics": "./src/collection.json",
   "dependencies": {
-    "@angular-devkit/core": "^9.1.3",
+    "@angular-devkit/architect": "^0.901.3",
     "@angular-devkit/schematics": "^9.1.3",
     "typescript": "~3.8.2"
   },
   "devDependencies": {
-    "@types/node": "^12.11.1",
     "@types/jasmine": "~3.5.0",
-    "jasmine": "^3.5.0"
+    "@types/node": "^12.11.1",
+    "jasmine": "^3.5.0",
+    "jasmine-node": "^3.0.0"
   }
 }
